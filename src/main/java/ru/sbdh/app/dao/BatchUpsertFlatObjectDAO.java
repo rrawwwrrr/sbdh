@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StopWatch;
 import ru.sbdh.app.dao.mapper.FlatObjectMapper;
-import ru.sbdh.app.domain.FlatObject;
+import ru.sbdh.app.models.FlatObject;
 
 import javax.inject.Inject;
 import java.util.List;

@@ -1,6 +1,6 @@
 package ru.sbdh.app;
 
-import ru.sbdh.app.domain.FlatObject;
+import ru.sbdh.app.models.FlatObject;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

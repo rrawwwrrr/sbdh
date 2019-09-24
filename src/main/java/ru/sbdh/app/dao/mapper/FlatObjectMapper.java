@@ -1,7 +1,7 @@
 package ru.sbdh.app.dao.mapper;
 
 import org.apache.ibatis.annotations.*;
-import ru.sbdh.app.domain.FlatObject;
+import ru.sbdh.app.models.FlatObject;
 
 import java.util.List;
 

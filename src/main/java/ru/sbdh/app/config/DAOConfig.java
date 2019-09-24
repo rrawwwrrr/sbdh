@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import ru.sbdh.app.dao.mapper.FlatObjectMapper;
+import ru.sbdh.app.dao.mapper.UserMapper;
 
 /**
  * This class holds custom bean definitions
@@ -36,6 +37,13 @@ public class DAOConfig {
         return mapper;
     }
 
+    @Bean(name = "userMapper")
+    public MapperFactoryBean userMapper(final SqlSessionFactory sqlSessionFactory) {
+        MapperFactoryBean mapper = new MapperFactoryBean();
+        mapper.setMapperInterface(UserMapper.class);
+        mapper.setSqlSessionTemplate(sqlSessionTemplate(sqlSessionFactory));
+        return mapper;
+    }
 
     @Bean(name = "batchFlatObjectMapper")
     public MapperFactoryBean batchFlatObjectMapper(final SqlSessionFactory sqlSessionFactory) {

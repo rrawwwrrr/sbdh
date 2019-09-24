@@ -1,4 +1,4 @@
-package ru.sbdh.app.domain;
+package ru.sbdh.app.models;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
