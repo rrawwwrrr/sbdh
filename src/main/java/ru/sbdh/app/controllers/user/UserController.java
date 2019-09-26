@@ -2,6 +2,7 @@ package ru.sbdh.app.controllers.user;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.sbdh.app.dao.mapper.UserMapper;
@@ -11,29 +12,27 @@ import javax.inject.Inject;
 import java.util.List;
 
 @RestController
+@RequestMapping("/user/")
 public class UserController {
-    /**
-     * This one performs batched upsert operations
-     */
-//    @Inject
-//    BatchUpsertFlatObjectDAO batchFlatObjectDAO;
 
-    /**
-     * This one performs upsert operations iteratively
-     */
     @Inject
     @Qualifier("userMapper")
     UserMapper userMapper;
 
-    @RequestMapping("/user/getbyid")
+    @RequestMapping(value = "getbyid", method = RequestMethod.GET)
     public User getuserbyid(@RequestParam(value = "id", defaultValue = "World") Integer id) {
         User user = userMapper.getUserById(id).get(0);
         return user;
     }
 
-    @RequestMapping("/user/getall")
+    @RequestMapping("getall")
     public List<User> getallusers() {
         List<User> user = userMapper.getAllUser();
+        return user;
+    }
+    @RequestMapping(value = "getbydid", method = RequestMethod.GET)
+    public User getuserbydid(@RequestParam(value = "id", defaultValue = "World") Integer id) {
+        User user = userMapper.getUserById(id).get(0);
         return user;
     }
 }
