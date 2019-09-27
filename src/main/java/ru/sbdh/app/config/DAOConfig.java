@@ -7,7 +7,6 @@ import org.mybatis.spring.mapper.MapperFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import ru.sbdh.app.dao.mapper.FlatObjectMapper;
 import ru.sbdh.app.dao.mapper.UserMapper;
 
 /**
@@ -29,14 +28,6 @@ public class DAOConfig {
         return new SqlSessionTemplate(sqlSessionFactory, ExecutorType.BATCH);
     }
 
-    @Bean(name = "flatObjectMapper")
-    public MapperFactoryBean flatObjectMapper(final SqlSessionFactory sqlSessionFactory) {
-        MapperFactoryBean mapper = new MapperFactoryBean();
-        mapper.setMapperInterface(FlatObjectMapper.class);
-        mapper.setSqlSessionTemplate(sqlSessionTemplate(sqlSessionFactory));
-        return mapper;
-    }
-
     @Bean(name = "userMapper")
     public MapperFactoryBean userMapper(final SqlSessionFactory sqlSessionFactory) {
         MapperFactoryBean mapper = new MapperFactoryBean();
@@ -45,13 +36,6 @@ public class DAOConfig {
         return mapper;
     }
 
-    @Bean(name = "batchFlatObjectMapper")
-    public MapperFactoryBean batchFlatObjectMapper(final SqlSessionFactory sqlSessionFactory) {
-        MapperFactoryBean mapper = new MapperFactoryBean();
-        mapper.setMapperInterface(FlatObjectMapper.class);
-        mapper.setSqlSessionTemplate(batchSqlSessionTemplate(sqlSessionFactory));
-        return mapper;
-    }
 
 
 }
