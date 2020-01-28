@@ -1,12 +1,12 @@
 package ru.sbdh.app.models;
 
-public class User {
+public class UserModel {
     private Integer id;
     private String fio;
     private String dolj;
 
 
-    public User() {
+    public UserModel() {
     }
 
     public Integer getId() {

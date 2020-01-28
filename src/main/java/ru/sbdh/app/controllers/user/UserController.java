@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.sbdh.app.dao.mapper.UserMapper;
-import ru.sbdh.app.models.User;
+import ru.sbdh.app.models.UserModel;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -20,19 +20,19 @@ public class UserController {
     UserMapper userMapper;
 
     @RequestMapping(value = "getbyid", method = RequestMethod.GET)
-    public User getuserbyid(@RequestParam(value = "id", defaultValue = "World") Integer id) {
-        User user = userMapper.getUserById(id).get(0);
+    public UserModel getuserbyid(@RequestParam(value = "id", defaultValue = "World") Integer id) {
+        UserModel user = userMapper.getUserById(id).get(0);
         return user;
     }
 
     @RequestMapping("getall")
-    public List<User> getallusers() {
-        List<User> user = userMapper.getAllUser();
+    public List<UserModel> getallusers() {
+        List<UserModel> user = userMapper.getAllUser();
         return user;
     }
     @RequestMapping(value = "getbydid", method = RequestMethod.GET)
-    public User getuserbydid(@RequestParam(value = "id", defaultValue = "World") Integer id) {
-        User user = userMapper.getUserById(id).get(0);
+    public UserModel getuserbydid(@RequestParam(value = "id", defaultValue = "World") Integer id) {
+        UserModel user = userMapper.getUserById(id).get(0);
         return user;
     }
 }
