@@ -3,6 +3,11 @@ package ru.sbdh.app.dao.mapper;
 
 import org.apache.ibatis.annotations.*;
 import ru.sbdh.app.models.UserModel;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.ResultMap;
+import org.apache.ibatis.annotations.Results;
+import org.apache.ibatis.annotations.Select;
+import ru.sbdh.app.models.User;
 
 import java.util.List;
 
@@ -13,13 +18,15 @@ public interface UserMapper {
 
     @Results(id = "user",value = {
             @Result(property = "id", column = "id", id=true),
-            @Result(property = "fio", column = "fio"),
+            @Result(property = "fullname", column = "fullname"),
             @Result(property = "dolj", column = "dolj")
     })
     @Select("SELECT * FROM userfull WHERE id = #{id}")
     List<UserModel> getUserById(Integer id);
 
     @ResultMap("user")
+    @Select("SELECT *,(select fio from userss where userss.id=userfull.fio) as fullname FROM userfull order by id;")
+    List<User> getAllUser();
     @Select("SELECT * FROM userfull order by id")
     List<UserModel> getAllUser();
 

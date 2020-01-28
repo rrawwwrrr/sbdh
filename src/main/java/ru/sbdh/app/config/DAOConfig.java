@@ -10,6 +10,8 @@ import org.springframework.context.annotation.Primary;
 import ru.sbdh.app.dao.mapper.ContractMapper;
 import ru.sbdh.app.dao.mapper.KbkMapper;
 import ru.sbdh.app.dao.mapper.UserMapper;
+import ru.sbdh.app.mapper.OtdelMapper;
+import ru.sbdh.app.mapper.UserMapper;
 
 /**
  * This class holds custom bean definitions
@@ -25,10 +27,10 @@ public class DAOConfig {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 
-    @Bean
-    public SqlSessionTemplate batchSqlSessionTemplate(final SqlSessionFactory sqlSessionFactory) {
-        return new SqlSessionTemplate(sqlSessionFactory, ExecutorType.BATCH);
-    }
+//    @Bean
+//    public SqlSessionTemplate batchSqlSessionTemplate(final SqlSessionFactory sqlSessionFactory) {
+//        return new SqlSessionTemplate(sqlSessionFactory, ExecutorType.BATCH);
+//    }
 
     @Bean(name = "userMapper")
     public MapperFactoryBean userMapper(final SqlSessionFactory sqlSessionFactory) {
@@ -52,4 +54,13 @@ public class DAOConfig {
         mapper.setSqlSessionTemplate(sqlSessionTemplate(sqlSessionFactory));
         return mapper;
     }
+    @Bean(name = "otdelMapper")
+    public MapperFactoryBean otdelMapper(final SqlSessionFactory sqlSessionFactory) {
+        MapperFactoryBean mapper = new MapperFactoryBean();
+        mapper.setMapperInterface(OtdelMapper.class);
+        mapper.setSqlSessionTemplate(sqlSessionTemplate(sqlSessionFactory));
+        return mapper;
+    }
+
+
 }
