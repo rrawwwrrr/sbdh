@@ -11,7 +11,6 @@ import ru.sbdh.app.dao.mapper.ContractMapper;
 import ru.sbdh.app.dao.mapper.KbkMapper;
 import ru.sbdh.app.dao.mapper.UserMapper;
 import ru.sbdh.app.mapper.OtdelMapper;
-import ru.sbdh.app.mapper.UserMapper;
 
 /**
  * This class holds custom bean definitions

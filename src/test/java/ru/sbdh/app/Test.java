@@ -1,7 +1,7 @@
 package ru.sbdh.app;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import ru.sbdh.app.models.User;
+import ru.sbdh.app.models.UserModel;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -16,7 +16,7 @@ public class Test {
 //        jsonString = "{\"id\": 39, \"dolj\": \"Начальник отдела\"}";
         ObjectMapper mapper = new ObjectMapper();
         try {
-            List<User> user = Arrays.asList(mapper.readValue(jsonString, User[].class));
+            List<UserModel> user = Arrays.asList(mapper.readValue(jsonString, UserModel[].class));
             System.out.println(user);
         } catch (IOException e) {
             System.out.println(e);

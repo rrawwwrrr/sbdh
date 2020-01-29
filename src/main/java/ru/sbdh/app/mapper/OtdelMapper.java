@@ -25,7 +25,9 @@ public interface OtdelMapper {
     List<Otdel> getAllOtdels();
 
     @ResultMap("otdel")
-    @Select("select o.id,o.email,o.nameotdel,json_agg(u.*) as users from otdel o left join (userfull left join userss on userss.id=userfull.fio) as u on u.otdel= o.id  group by o.id,o.nameotdel order by nomenk ")
+    @Select("select o.id,o.email,o.nameotdel,json_agg(u.*) as users from personal.otdel o" +
+            " left join (personal.userfull left join personal.userss on personal.userss.id=personal.userfull.fio)" +
+            " as u on u.otdel= o.id  group by o.id,o.nameotdel order by nomenk ")
     List<Otdel> getAllOtdelsWithUsers();
 
 }

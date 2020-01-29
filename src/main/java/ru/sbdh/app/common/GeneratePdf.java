@@ -11,7 +11,6 @@ import org.apache.pdfbox.pdmodel.font.PDType0Font;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.sbdh.app.models.Otdel;
-import ru.sbdh.app.models.User;
 
 import java.awt.*;
 import java.io.ByteArrayInputStream;
