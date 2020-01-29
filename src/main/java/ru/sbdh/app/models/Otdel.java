@@ -12,7 +12,7 @@ public class Otdel {
     private String nameotdel;
     private Integer nomenk;
     private String email;
-    private User[] users;
+    private UserModel[] users;
 
 
     public Integer getId() {
@@ -50,7 +50,7 @@ public class Otdel {
     public void setUsers(String users) {
         ObjectMapper mapper = new ObjectMapper();
         try {
-            this.users = mapper.readValue(users, User[].class);
+            this.users = mapper.readValue(users, UserModel[].class);
         } catch (IOException e) {
             LOGGER.warn(e.toString());
         }

@@ -1,5 +1,7 @@
 package ru.sbdh.app.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -8,7 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class User {
+public class UserModel {
     private Integer id;
     private String fio;
     private String fullname;
@@ -16,7 +18,7 @@ public class User {
 //    @JsonDeserialize(as = LinkedList.class)
 //    private List<User> users;
 
-    public User() {
+    public UserModel() {
     }
 
     public Integer getId() {
@@ -50,12 +52,4 @@ public class User {
     public void setFullname(String fullname) {
         this.fullname = fullname;
     }
-//
-//    public List<User> getUsers() {
-//        return users;
-//    }
-//
-//    public void setUsers(List<User> users) {
-//        this.users = users;
-//    }
 }

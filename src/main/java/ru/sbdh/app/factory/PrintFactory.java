@@ -9,13 +9,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import ru.sbdh.app.common.GeneratePdf;
 import ru.sbdh.app.mapper.OtdelMapper;
-import ru.sbdh.app.mapper.UserMapper;
-import ru.sbdh.app.models.Otdel;
 
 import javax.inject.Inject;
 import java.io.ByteArrayInputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import ru.sbdh.app.dao.mapper.UserMapper;
 import java.util.List;
 
 @Component

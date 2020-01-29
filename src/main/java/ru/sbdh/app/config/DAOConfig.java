@@ -1,13 +1,16 @@
 package ru.sbdh.app.config;
 
+import org.apache.ibatis.session.ExecutorType;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.mapper.MapperFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import ru.sbdh.app.dao.mapper.ContractMapper;
+import ru.sbdh.app.dao.mapper.KbkMapper;
+import ru.sbdh.app.dao.mapper.UserMapper;
 import ru.sbdh.app.mapper.OtdelMapper;
-import ru.sbdh.app.mapper.UserMapper;
 
 /**
  * This class holds custom bean definitions
@@ -36,6 +39,20 @@ public class DAOConfig {
         return mapper;
     }
 
+    @Bean(name = "contractMapper")
+    public MapperFactoryBean contractMapper(final SqlSessionFactory sqlSessionFactory) {
+        MapperFactoryBean mapper = new MapperFactoryBean();
+        mapper.setMapperInterface(ContractMapper.class);
+        mapper.setSqlSessionTemplate(sqlSessionTemplate(sqlSessionFactory));
+        return mapper;
+    }
+    @Bean(name = "kbkMapper")
+    public MapperFactoryBean kbkMapper(final SqlSessionFactory sqlSessionFactory) {
+        MapperFactoryBean mapper = new MapperFactoryBean();
+        mapper.setMapperInterface(KbkMapper.class);
+        mapper.setSqlSessionTemplate(sqlSessionTemplate(sqlSessionFactory));
+        return mapper;
+    }
     @Bean(name = "otdelMapper")
     public MapperFactoryBean otdelMapper(final SqlSessionFactory sqlSessionFactory) {
         MapperFactoryBean mapper = new MapperFactoryBean();
