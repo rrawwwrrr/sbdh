@@ -23,7 +23,7 @@ public interface UserMapper {
     List<UserModel> getUserById(Integer id);
 
     @ResultMap("user")
-    @Select("SELECT *,(select fio from userss where userss.id=userfull.fio) as fullname FROM userfull order by id;")
+    @Select("SELECT *,(select fio from personal.userss where personal.userss.id=personal.userfull.fio) as fullname FROM personal.userfull order by id;")
     List<UserModel> getAllUsers();
 
  /*   @Select("SELECT * FROM userfull order by id")
