@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import ru.sbdh.app.dao.mapper.UserMapper;
 import ru.sbdh.app.factory.PrintFactory;
 import ru.sbdh.app.factory.UserFactory;
 import ru.sbdh.app.models.UserModel;
@@ -16,7 +15,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user/")
+@RequestMapping("/api/user/")
 public class UserController {
 
 

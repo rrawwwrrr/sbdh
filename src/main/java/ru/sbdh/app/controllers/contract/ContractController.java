@@ -2,7 +2,7 @@ package ru.sbdh.app.controllers.contract;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
-import ru.sbdh.app.dao.mapper.ContractMapper;
+import ru.sbdh.app.mapper.ContractMapper;
 import ru.sbdh.app.models.ContractModel;
 
 import javax.inject.Inject;

@@ -14,8 +14,7 @@ import javax.inject.Inject;
 import java.io.ByteArrayInputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import ru.sbdh.app.dao.mapper.UserMapper;
-import java.util.List;
+import ru.sbdh.app.mapper.UserMapper;
 
 @Component
 public class PrintFactory {

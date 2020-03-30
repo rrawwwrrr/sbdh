@@ -3,7 +3,7 @@ package ru.sbdh.app.factory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import ru.sbdh.app.models.UserModel;
-import ru.sbdh.app.dao.mapper.UserMapper;
+import ru.sbdh.app.mapper.UserMapper;
 
 
 import javax.inject.Inject;

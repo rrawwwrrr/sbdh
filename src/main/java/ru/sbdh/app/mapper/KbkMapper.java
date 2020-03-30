@@ -1,4 +1,4 @@
-package ru.sbdh.app.dao.mapper;
+package ru.sbdh.app.mapper;
 
 import org.apache.ibatis.annotations.Select;
 import ru.sbdh.app.models.KbkModel;
